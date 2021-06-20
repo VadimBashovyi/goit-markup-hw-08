@@ -1,0 +1,28 @@
+.header {
+  background-color: $color-white;
+  border-bottom: 1px solid $border-color;
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+.logotype {
+  font-family: 'Raleway', 'Roboto';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  margin-right: 93px;
+  &:hover {
+    color: $accent;
+    text-decoration: none;
+  }
+  .logotype__textone {
+    color: $accent;
+  }
+  .logotype__texttwo {
+    color: $color-black;
+  }
+}

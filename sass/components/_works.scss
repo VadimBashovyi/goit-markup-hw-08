@@ -1,0 +1,33 @@
+.work__item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  .work__overlay {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    margin: 0;
+    color: $color-white;
+    background-color: $overlay-work;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1.14;
+    text-align: center;
+  }
+}
+.work-position {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.work__list {
+  display: flex;
+  padding: 0;
+}
