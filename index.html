@@ -24,59 +24,91 @@
 
     <header class="header">
       <div class="container">
-        <nav class="navigation-logotip">
-          <a class="logotype" href="./index.html">
-            <span class="logotype__textone">
-              Web
-            </span>
-            <span class="logotype__texttwo">
-              Studio
-            </span>
-          </a>
-          <ul class="navigation">
-            <li class="navigation__item">
-              <a class="navigation__item__link" href="./index.html">
-                <div class="current">Студия</div>
+        <a class="logotype" href="./index.html">
+          <span class="logotype__textone">
+            Web
+          </span>
+          <span class="logotype__texttwo">
+            Studio
+          </span>
+        </a>
+        <button class="burger-menu is-open" data-menu-button>
+          <svg class="burger-menu__icon" aria-label="Мобильное меню">
+            <use href="./images/icons.svg#menu_burger"></use>
+          </svg>
+        </button>
+        <div class="menu-container" data-menu>
+          <button class="burger-menu burger-menu--right" data-menu-button-close>
+            <svg
+              class="burger-menu__icon burger-menu__icon--small"
+              aria-label="Мобильное меню"
+            >
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+          <nav class="navigation">
+            <ul class="header-menu">
+              <li class="header-menu__list">
+                <a
+                  href="./index.html"
+                  class="header-menu__link header-menu__link--active"
+                >
+                  Студия
+                </a>
+              </li>
+              <li class="header-menu__list">
+                <a href="./portfolio.html" class="header-menu__link">
+                  Портфолио
+                </a>
+              </li>
+              <li class="header-menu__list">
+                <a href="" class="header-menu__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="header-menu header-menu--right">
+            <li class="header-menu__list">
+              <a
+                href="mailto:info@devstudo.com"
+                class="header-menu__link header-menu__link--flex header-menu__link--flex--small"
+              >
+                <svg class="header-menu__icon" width="16" height="10">
+                  <use href="./images/icons.svg#icon-mail"></use>
+                </svg>
+                info@devstudo.com
               </a>
             </li>
-            <li class="navigation__item">
-              <a class="navigation__item__link" href="./portfolio.html">
-                Портфолио
-              </a>
-            </li>
-            <li class="navigation__item">
-              <a class="navigation__item__link" href="">
-                Контакты
+            <li class="header-menu__list">
+              <a
+                href="tel:+380961111111"
+                class="header-menu__link header-menu__link--flex"
+              >
+                <svg
+                  class="header-menu__icon header-menu__icon--strong"
+                  width="10"
+                  height="1"
+                >
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
+                +38 096 111 11 11
               </a>
             </li>
           </ul>
-        </nav>
-
-        <!-- right navigation -->
-        <ul class="navigation right-navigation">
-          <li class="navigation-contacts-mail link">
-            <a
-              href="mailto:info@devstudio.com"
-              class="navigation-contacts-mail__item contacts-link"
-            >
-              <svg class="navigation__icon-adress" width="16" height="10">
-                <use href="./images/icons.svg#icon-mail"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="navigation-contacts-tel link">
-            <a
-              href="tel:+380961111111"
-              class="navigation-contacts-tel__item contacts-link"
-            >
-              <svg class="navigation__icon-adress" width="16" height="10">
-                <use href="./images/icons.svg#icon-telep"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+          <ul class="header-social">
+            <li class="header-social__item">
+              <a href="" class="header-social__link">Instagram</a>
+            </li>
+            <li class="header-social__item">
+              <a href="" class="header-social__link">Twitter</a>
+            </li>
+            <li class="header-social__item">
+              <a href="" class="header-social__link">Facebook</a>
+            </li>
+            <li class="header-social__item">
+              <a href="" class="header-social__link">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -87,7 +119,9 @@
         <div class="hero__overlay">
           <div class="container">
             <h1 class="hero__title">
-              Эффективные решения для вашего бизнеса
+              Эффективные решения
+              <br />
+              для вашего бизнеса
             </h1>
             <button class="about-btn" type="button" data-modal-open>
               Заказать услугу
@@ -153,7 +187,7 @@
         </div>
       </section>
       <!-- чем мы занимаемся -->
-      <section class="work work-position">
+      <section class="work work-position work-none">
         <div class="container">
           <h2 class="work__title">Чем мы занимаемся</h2>
           <ul class="work__list">
@@ -193,12 +227,38 @@
           <h2 class="work__title">Наша команда</h2>
           <ul class="team__list">
             <li class="team__background">
-              <img
-                src="./images/img6.jpg"
-                alt="Игорь Демьяненко"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-1-desktop.jpg    1x,
+                    ./images/team/team-1-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-1-tablet.jpg    1x,
+                    ./images/team/team-1-tablet@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-1-mobile.jpg    1x,
+                    ./images/team/team-1-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  class="teams__image"
+                  srcset="
+                    ./images/team/team-1-mobile.jpg    1x,
+                    ./images/team/team-1-mobile@2x.jpg 2x
+                  "
+                  src="./images/team/team-1-mobile.jpg"
+                  alt="Photo"
+                />
+              </picture>
               <div class="info-cards">
                 <h3 class="team__title">Игорь Демьяненко</h3>
                 <p class="team__about">Product Designer</p>
@@ -235,12 +295,38 @@
               </div>
             </li>
             <li class="team__background">
-              <img
-                src="./images/img1.jpg"
-                alt="Ольга Репина"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-2-desktop.jpg    1x,
+                    ./images/team/team-2-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-2-tablet.jpg    1x,
+                    ./images/team/team-2-tablet@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-2-mobile.jpg    1x,
+                    ./images/team/team-2-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  class="teams__image"
+                  srcset="
+                    ./images/team/team-2-mobile.jpg    1x,
+                    ./images/team/team-2-mobile@2x.jpg 2x
+                  "
+                  src="./images/team/team-2-mobile.jpg"
+                  alt="Photo"
+                />
+              </picture>
               <div class="info-cards">
                 <h3 class="team__title">Ольга Репина</h3>
                 <p class="team__about">Frontend Developer</p>
@@ -277,12 +363,38 @@
               </div>
             </li>
             <li class="team__background">
-              <img
-                src="./images/img2.jpg"
-                alt="Николай Тарасов"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-3-desktop.jpg    1x,
+                    ./images/team/team-3-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-3-tablet.jpg    1x,
+                    ./images/team/team-3-tablet@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-3-mobile.jpg    1x,
+                    ./images/team/team-3-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  class="teams__image"
+                  srcset="
+                    ./images/team/team-3-mobile.jpg    1x,
+                    ./images/team/team-3-mobile@2x.jpg 2x
+                  "
+                  src="./images/team/team-3-mobile.jpg"
+                  alt="Photo"
+                />
+              </picture>
               <div class="info-cards">
                 <h3 class="team-title">Николай Тарасов</h3>
                 <p class="team-about">Marketing</p>
@@ -319,12 +431,38 @@
               </div>
             </li>
             <li class="team__background">
-              <img
-                src="./images/img4.jpg"
-                alt="Михаил Ермаков"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-4-desktop.jpg    1x,
+                    ./images/team/team-4-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-4-tablet.jpg    1x,
+                    ./images/team/team-4-tablet@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-4-mobile.jpg    1x,
+                    ./images/team/team-4-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  class="teams__image"
+                  srcset="
+                    ./images/team/team-4-mobile.jpg    1x,
+                    ./images/team/team-4-mobile@2x.jpg 2x
+                  "
+                  src="./images/team/team-4-mobile.jpg"
+                  alt="Photo"
+                />
+              </picture>
               <div class="info-cards">
                 <h3 class="team__title">Михаил Ермаков</h3>
                 <p class="team__about">UI Designer</p>
@@ -591,5 +729,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="js/mobile-menu.js"></script>
   </body>
 </html>

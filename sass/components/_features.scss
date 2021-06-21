@@ -1,5 +1,4 @@
 .feature {
-  padding-bottom: 0;
 }
 .feature__icon {
   display: flex;
@@ -15,34 +14,86 @@
 }
 
 .feature__list {
-  flex-basis: calc((100% - 3 * 30px) / 4);
-  &:not(:first-child) {
-    margin-left: 30px;
-  }
-  .feature__item-title {
-    margin-bottom: 10px;
-    margin-top: 0;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
+  // flex-basis: calc((100% - 3 * 30px) / 4);
+  margin-bottom: 30px;
+  // &:not(:first-child) {
+  //   margin-left: 30px;
+  // }
+
   .feature__item-text {
     color: $secondary-color;
-    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
     line-height: 1.71;
-    letter-spacing: 0.03em;
-    margin-top: 10px;
+  }
+}
+.feature__item-title {
+  color: $main-color;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+}
+// mobil >>>>>>
+
+.feature-sections {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.feature-box {
+  // display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+// 767+>>>>>
+@media screen and (min-width: 768px) {
+  .feature__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .feature__list {
+    margin-bottom: 0;
+    flex-basis: calc((100% - 1 * 30px) / 2);
+    margin-bottom: 30px;
   }
 }
 
-.feature-sections {
-  padding-top: 94px;
-  .feature-box {
-    display: flex;
-    margin-top: 0;
+@media screen and (min-width: 1200px) {
+  .features__item {
+    margin-right: 0;
     margin-bottom: 0;
-    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .feature__list {
+    margin-bottom: 0;
+    flex-basis: calc((100% - 3 * 30px) / 4);
+  }
+}
+@media screen and (min-width: 768px) {
+  .feature__list:nth-child(2n-1) {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .feature__list:nth-child(2n-1) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feature__list:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .feature__item-title {
+    text-align: left;
   }
 }

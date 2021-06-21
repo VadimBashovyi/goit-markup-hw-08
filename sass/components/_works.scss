@@ -1,3 +1,11 @@
+.work-none {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .work-none {
+    display: block;
+  }
+}
 .work__item {
   flex-basis: calc((100% - 2 * 30px) / 3);
   position: relative;
