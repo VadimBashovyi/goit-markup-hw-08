@@ -192,30 +192,42 @@
           <h2 class="work__title">Чем мы занимаемся</h2>
           <ul class="work__list">
             <li class="work__item">
-              <img
-                src="./images/img5.jpg"
-                alt="робота з кодом"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/box/box-1-desktop.jpg    1x,
+                    ./images/box/box-1-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <img src="#" alt="Десктопные приложения" />
+              </picture>
               <p class="work__overlay">Десктопные приложения</p>
             </li>
             <li class="work__item">
-              <img
-                src="./images/img.jpg"
-                alt="робота з гаджетами"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/box/box-2-desktop.jpg    1x,
+                    ./images/box/box-2-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <img src="#" alt="Мобильные приложения" />
+              </picture>
               <p class="work__overlay">Мобильные приложения</p>
             </li>
             <li class="work__item">
-              <img
-                src="./images/img123.jpg"
-                alt="робота з зображенням"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/box/box-3-desktop.jpg    1x,
+                    ./images/box/box-3-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <img src="#" alt="Дизайнерские решения" />
+              </picture>
               <p class="work__overlay">Дизайнерские решения</p>
             </li>
           </ul>
@@ -555,63 +567,62 @@
     <!-- FOOTER    -->
 
     <footer class="footer footer-position">
-      <div class="container">
+      <div class="container footer__container">
         <div class="footer__logo">
-          <a class="logotype" href="/">
-            <span class="logotype__textone">Web</span>
-            <span class="logotype__footer">Studio</span>
-          </a>
-          <address class="address address-position">
-            г. Киев, пр-т Леси Украинки, 26
-            <ul class="address__list">
-              <li class="address__link">info@example.com</li>
-              <li class="address__link">+38 099 111 11 11</li>
+          <div class="footer__box">
+            <a class="logotype" href="/">
+              <span class="logotype__textone">Web</span>
+              <span class="logotype__footer">Studio</span>
+            </a>
+            <address class="address address-position">
+              г. Киев, пр-т Леси Украинки, 26
+              <ul class="address__list">
+                <li class="address__link">info@example.com</li>
+                <li class="address__link">+38 099 111 11 11</li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer__social">
+            <p class="footer__bottom-text">присоединяйтесь</p>
+            <ul class="cards-social">
+              <li class="cards-social__list-item">
+                <a href="" class="cards-social__footer-link">
+                  <svg class="cards-social__footer-icon">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="cards-social__list-item">
+                <a href="" class="cards-social__footer-link">
+                  <svg class="cards-social__footer-icon">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="cards-social__list-item">
+                <a href="" class="cards-social__footer-link">
+                  <svg class="cards-social__footer-icon">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="cards-social__list-item">
+                <a href="" class="cards-social__footer-link">
+                  <svg class="cards-social__footer-icon">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
             </ul>
-          </address>
+          </div>
         </div>
 
         <!-- footer social -->
-        <div class="footer__social">
-          <p class="footer__bottom-text">присоединяйтесь</p>
-          <ul class="cards-social">
-            <li class="cards-social__list-item">
-              <a href="" class="cards-social__footer-link">
-                <svg class="cards-social__footer-icon">
-                  <use href="./images/icons.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="cards-social__list-item">
-              <a href="" class="cards-social__footer-link">
-                <svg class="cards-social__footer-icon">
-                  <use href="./images/icons.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="cards-social__list-item">
-              <a href="" class="cards-social__footer-link">
-                <svg class="cards-social__footer-icon">
-                  <use href="./images/icons.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="cards-social__list-item">
-              <a href="" class="cards-social__footer-link">
-                <svg class="cards-social__footer-icon">
-                  <use href="./images/icons.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+
         <!-- footer mailing___________ -->
-        <form
-          class="mailing mailing-position"
-          name="mailing"
-          autocomplete="off"
-        >
-          <p class="footer__bottom-text">Подпишитесь на рассылку</p>
-          <div class="mailing__footer">
+        <div class="mailing mailing__footer">
+          <form class="mailing-position" name="mailing" autocomplete="off">
+            <p class="footer__bottom-text">Подпишитесь на рассылку</p>
             <input
               type="email"
               name="email"
@@ -628,8 +639,8 @@
                 <use href="./images/icons.svg#icon-telegram-footer"></use>
               </svg>
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </footer>
     <!-- MODAL WINDOW -->

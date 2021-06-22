@@ -1,7 +1,7 @@
 .footer__logo {
   display: block;
-  margin-bottom: 60px;
-  text-align: center;
+  // margin-bottom: 60px;
+  // text-align: center;
   .logotype__footer {
     color: $color-white;
   }
@@ -10,9 +10,6 @@
 //   margin-left: 70px;
 // }
 .footer-position {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  text-align: center;
 }
 .footer {
   background: $color-hero;
@@ -89,6 +86,14 @@
 }
 
 // mob>>>>>
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.footer .footer__box {
+  margin-bottom: 60px;
+}
 .footer .logotype {
   margin-bottom: 20px;
   margin-right: 0;
@@ -104,25 +109,94 @@
   margin-bottom: 60px;
 }
 .footer__bottom-text {
-  margin: 0;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.14;
 }
-.mailing-position {
-  text-align: center;
-}
+
 // 768>>>>>
 @media screen and (min-width: 768px) {
-  .footer .container {
-    align-items: baseline;
-    justify-content: space-between;
+  .mailing-btn {
+    display: flex;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 768px) {
-  .footer__logo {
+  .mailing-position {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__bottom-text {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.14;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer .footer__logo {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mailing .mailing__form-input {
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+// 1200 +>>>>>
+@media screen and (min-width: 1200px) {
+  .footer .footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer .footer__logo {
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer .footer__box {
+    margin-right: 93px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mailing__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mailing .mailing__form-input {
+    width: 358px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mailing-position {
+    // display: flex;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mailing-btn {
+    display: inline-flex;
   }
 }

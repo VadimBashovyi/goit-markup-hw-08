@@ -53,13 +53,24 @@
 }
 
 .portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   .content-portfolio {
     display: flex;
     flex-wrap: wrap;
     margin-right: calc(-1 * 30px);
     margin-bottom: calc(-1 * 30px);
     padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__button-list {
+    margin-bottom: 50px;
   }
 }
