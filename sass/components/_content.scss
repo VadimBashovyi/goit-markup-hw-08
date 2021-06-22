@@ -1,9 +1,31 @@
+@media screen and (max-width: 767px) {
+  .products__image {
+    width: 100%;
+    height: 100%;
+  }
+  .content-portfolio .content-portfolio-link {
+    line-height: 2;
+    width: 100%;
+    letter-spacing: 0.06em;
+    margin-bottom: 30px;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+    & .portfolio-link:hover .text-overlay,
+    & .portfolio-link:focus .text-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 .content-portfolio-link {
   line-height: 2;
+  width: 100%;
   letter-spacing: 0.06em;
-  margin-right: 30px;
+  // margin-right: 30px;
   margin-bottom: 30px;
-  flex-basis: calc(100% / 3 - 30px);
   &:hover,
   &:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -16,6 +38,14 @@
   }
 }
 
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .content-bg {
   position: relative;
   overflow: hidden;
@@ -39,6 +69,7 @@
 }
 
 .content-botton {
+  flex-grow: 1;
   border-right: 1px solid $border-color;
   padding: 20px 24px;
   border-bottom: 1px solid $border-color;
@@ -55,14 +86,37 @@
 .portfolio {
   padding-top: 60px;
   padding-bottom: 60px;
-  .content-portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: calc(-1 * 30px);
+}
+//   .content-portfolio {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-bottom: calc(-1 * 30px);
+//     padding: 0;
+//   }
+// }
+// 768>>>>
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .products {
     margin-bottom: calc(-1 * 30px);
-    padding: 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .content-portfolio-link {
+    width: calc((100% - 30px) / 2);
+    flex-basis: calc(100% / 3 - 30px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .content-portfolio-link:nth-child(2n-1) {
+    margin-right: 30px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .portfolio {
     padding-top: 94px;
@@ -72,5 +126,15 @@
 @media screen and (min-width: 1200px) {
   .portfolio__button-list {
     margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content-portfolio-link:nth-child(2n-1) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content-portfolio-link:not(:nth-child(3n)) {
+    margin-right: 30px;
   }
 }

@@ -51,9 +51,8 @@ address {
 }
 
 .container {
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -98,6 +97,12 @@ address {
     line-height: 1.16;
     margin-bottom: 50px;
   }
+}
+
+.images {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .header {
@@ -293,6 +298,18 @@ address {
     display: flex;
     align-items: center;
   }
+  .header-menu .header-menu--right {
+    margin: 0;
+    margin-left: auto;
+    display: block;
+    padding-top: 21px;
+    text-align: left;
+  }
+  .header-menu .header-menu--right :hover,
+  .header-menu .header-menu--right :focus {
+    color: #2196f3;
+    text-decoration: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -330,7 +347,6 @@ address {
     margin-left: auto;
     display: block;
     padding-top: 21px;
-    padding-bottom: 21px;
     text-align: left;
   }
   .header-menu--right :hover,
@@ -362,8 +378,7 @@ address {
 @media screen and (min-width: 768px) {
   .header-menu__icon {
     display: block;
-    width: 16px;
-    height: 16px;
+    height: 14px;
     margin-right: 10px;
     fill: currentColor;
   }
@@ -506,6 +521,7 @@ address {
   margin-bottom: 25px;
   padding: 0;
   text-align: center;
+  margin-left: calc(-1 * 8px);
 }
 
 .navigations-btn .navigations-btn-item {
@@ -522,17 +538,38 @@ address {
 
 .modal-btn {
   position: absolute;
-  min-width: 528px;
-  min-height: 581px;
+  width: 100%;
+  max-width: 450px;
+  height: 609px;
   top: 50%;
   left: 50%;
+  padding: 40px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transform: perspective(600px) translate(-50%, -50%) rotateX(0deg);
   opacity: 1;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(-50%, -50%);
-  padding: 40px;
+}
+
+.backdrop--hidden .modal-btn {
+  transform: perspective(600px) translate(-50%, -150%) rotateX(45deg);
+  opacity: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-btn {
+    min-width: 528px;
+    min-height: 581px;
+  }
+}
+
+@media screen and (max-height: 610px) {
+  .modal-btn {
+    top: 0;
+    left: 50%;
+    transform: perspective(600px) translate(-50%, 0) rotateX(0deg);
+  }
 }
 
 .modal-windiw__btn-close {
@@ -1190,12 +1227,32 @@ address {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .products__image {
+    width: 100%;
+    height: 100%;
+  }
+  .content-portfolio .content-portfolio-link {
+    line-height: 2;
+    width: 100%;
+    letter-spacing: 0.06em;
+    margin-bottom: 30px;
+  }
+  .content-portfolio .content-portfolio-link:hover, .content-portfolio .content-portfolio-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  .content-portfolio .content-portfolio-link .portfolio-link:hover .text-overlay,
+  .content-portfolio .content-portfolio-link .portfolio-link:focus .text-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .content-portfolio-link {
   line-height: 2;
+  width: 100%;
   letter-spacing: 0.06em;
-  margin-right: 30px;
   margin-bottom: 30px;
-  flex-basis: calc(100% / 3 - 30px);
 }
 
 .content-portfolio-link:hover, .content-portfolio-link:focus {
@@ -1206,6 +1263,15 @@ address {
 .content-portfolio-link .portfolio-link:focus .text-overlay {
   opacity: 1;
   transform: translateY(0);
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-bg {
@@ -1231,6 +1297,7 @@ address {
 }
 
 .content-botton {
+  flex-grow: 1;
   border-right: 1px solid #ececec;
   padding: 20px 24px;
   border-bottom: 1px solid #ececec;
@@ -1250,12 +1317,29 @@ address {
   padding-bottom: 60px;
 }
 
-.portfolio .content-portfolio {
+.products {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1 * 30px);
-  margin-bottom: calc(-1 * 30px);
   padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .products {
+    margin-bottom: calc(-1 * 30px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-portfolio-link {
+    width: calc((100% - 30px) / 2);
+    flex-basis: calc(100% / 3 - 30px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-portfolio-link:nth-child(2n-1) {
+    margin-right: 30px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1271,17 +1355,31 @@ address {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .content-portfolio-link:nth-child(2n-1) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content-portfolio-link:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+}
+
 .backdrop {
   position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(47, 48, 58, 0.8);
   opacity: 1;
   visibility: visible;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 100;
 }
 
 .is-hidden {
@@ -1291,7 +1389,6 @@ address {
 }
 
 .form-modal-windiw {
-  width: 448px;
   height: 342px;
   margin: auto;
 }
@@ -1318,7 +1415,7 @@ address {
 }
 
 .form-modal__form-field .form-modal__form-input {
-  width: 448px;
+  width: 100%;
   height: 40px;
   font-size: 14px;
   padding-left: 32px;
@@ -1355,7 +1452,7 @@ address {
 }
 
 .form-modal__comment {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   border-radius: 4px;
@@ -1383,9 +1480,9 @@ address {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
-  padding-left: 12px;
-  font-size: 14px;
-  line-height: 1.71;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.17;
 }
 
 .form-modal__policy .form-modal__policy-modal input {
@@ -1415,5 +1512,13 @@ address {
   border-color: #2196f3;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1200px) {
+  .form-modal__policy .form-modal__policy-modal {
+    font-size: 14px;
+    line-height: 1.71;
+    padding-left: 12px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

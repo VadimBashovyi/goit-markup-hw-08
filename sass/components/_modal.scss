@@ -1,15 +1,17 @@
 .backdrop {
   position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $backdrop;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(47, 48, 58, 0.8);
   opacity: 1;
   visibility: visible;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 100;
 }
 .is-hidden {
   opacity: 0;
@@ -19,7 +21,6 @@
 
 // form _____
 .form-modal-windiw {
-  width: 448px;
   height: 342px;
   margin: auto;
 }
@@ -43,7 +44,7 @@
   justify-content: center;
   flex-direction: column;
   .form-modal__form-input {
-    width: 448px;
+    width: 100%;
     height: 40px;
     font-size: 14px;
     padding-left: 32px;
@@ -79,7 +80,7 @@
 }
 
 .form-modal__comment {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   border-radius: 4px;
@@ -104,9 +105,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    padding-left: 12px;
-    font-size: 14px;
-    line-height: 1.71;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.17;
     & input {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -136,4 +137,12 @@
   border-color: $accent;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1200px) {
+  .form-modal__policy .form-modal__policy-modal {
+    font-size: 14px;
+    line-height: 1.71;
+    padding-left: 12px;
+  }
 }
