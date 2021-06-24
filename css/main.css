@@ -887,6 +887,7 @@ address {
 
 .team__background {
   text-align: center;
+  margin: 0 auto;
   max-width: 450px;
   background-color: #ffffff;
   border-radius: 0 0 4px 4px;
@@ -1251,6 +1252,7 @@ address {
 
 .content-portfolio-link {
   line-height: 2;
+  margin: 0 auto;
   letter-spacing: 0.06em;
   margin-bottom: 30px;
 }
