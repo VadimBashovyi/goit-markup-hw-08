@@ -73,6 +73,13 @@ address {
   text-align: center;
 }
 
+@media screen and (min-width: 480px) {
+  .container {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
